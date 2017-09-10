@@ -28,18 +28,18 @@ describe('CourseFrom via React Test Utils', () => {
         const {output} = setup();
         expect(output.type).toBe('form');
         let [ h1 ] = output.props.children;
-        expect(h1.type).toBe('h1');  
+        expect(h1.type).toBe('h1');
     });
 
     it('Save button is labeled "Save" when not saving', () => {
         const {output} = setup(false);
         const submitButton = output.props.children[5];
-        expect(submitButton.props.value).toBe('Save');  
+        expect(submitButton.props.value).toBe('Save');
     });
 
     it('Save button is labeled "Saving..." when saving', () => {
         const {output} = setup(true);
         const submitButton = output.props.children[5];
-        expect(submitButton.props.value).toBe('Saving...');  
+        expect(submitButton.props.value).toBe('Saving...');
     });
 });

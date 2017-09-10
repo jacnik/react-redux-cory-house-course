@@ -95,7 +95,7 @@ function getEmptyCourse() {
 
 function getCourseById(courses, id) {
     const course = courses.filter(course => course.id === id);
-    return course.length > 0 
+    return course.length > 0
         ? course[0] // .filter returns as array!
         : null;
 }
@@ -111,8 +111,8 @@ function mapStateToProps(state, ownProps) {
 
     let course = courseId && state.courses.length > 0
         ? getCourseById(state.courses, courseId)
-        : getEmptyCourse(); 
-    
+        : getEmptyCourse();
+
     return {
         initialCourse: course,
         authors: authorsFormattedForDropdown(state.authors)
@@ -122,7 +122,7 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
     return {
         actions: bindActionCreators(courseActions, dispatch)
-    }; 
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);
